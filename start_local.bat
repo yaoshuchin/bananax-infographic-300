@@ -1,19 +1,20 @@
 @echo off
 chcp 65001 >nul
-title 茶米老師 NotebookLM 資訊圖表風格一覽表
+title BananaX 提示詞庫 300 選 - AI 資訊圖表生成
 echo ========================================================
-echo   茶米老師 NotebookLM 資訊圖表風格一覽表
-echo   視覺動線 (F/S/Z) × 10大核心風格 × 神級提示詞產生器
+echo   BananaX 提示詞庫 300 選 - AI 資訊圖表生成
+echo   NotebookLM / Gemini 300 款設計風格評估與提示詞庫
 echo ========================================================
 echo.
 echo 正在啟動本地伺服器：http://localhost:8089 ...
-echo 瀏覽器將自動開啟首頁，按 Ctrl+C 可停止伺服器。
+echo 瀏覽器將自動開啟：http://localhost:8089/zh/?tab=history#designs
+echo 按 Ctrl+C 可停止伺服器。
 echo.
 
-start "" "http://localhost:8089/index.html"
+start "" "http://localhost:8089/zh/?tab=history#designs"
 python -m http.server 8089
 if %ERRORLEVEL% NEQ 0 (
-    echo Python 伺服器啟動失敗，嘗試使用 8080 端口或 npx serve...
+    echo 8089 端口被佔用，嘗試使用 8080 端口...
     python -m http.server 8080
     if %ERRORLEVEL% NEQ 0 (
         npx serve -l 8089 .

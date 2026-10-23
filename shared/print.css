@@ -1,0 +1,209 @@
+/* BananaX Print Stylesheet
+   Enterprise-friendly printing for Teams/Slack/LINE Works shared links
+   Issue #90 — Revised after review */
+
+@media print {
+  /* === Hide interactive/non-essential elements === */
+
+  /* Modals */
+  .modal-overlay,
+  .modal-sheath,
+  .modal-content,
+  .api-modal-overlay,
+  .api-modal-content,
+
+  /* Toasts & notifications */
+  .toast-container,
+
+  /* Scroll indicators & navigation arrows */
+  .scroll-indicator,
+  .scroll-arrow,
+  .scroll-hint,
+  .chip-scroll-arrow,
+
+  /* Navigation & header controls */
+  .top-nav-container,
+  .sticky-tabs,
+  .tab-wrapper,
+  .header-right-group,
+
+  /* Search & filter */
+  .search-area,
+  .search-pill,
+  .filter-chips-wrapper,
+  .filter-chips,
+
+  /* Mode toggles & switches */
+  .mode-toggle-inline,
+  .switch,
+
+  /* Language switcher */
+  .lang-switch,
+  .lang-switch-container,
+
+  /* Action buttons */
+  .copy-btn,
+  .action-btn,
+  .action-green-btn,
+  .yaml-actions,
+  .card-detail-btn,
+  .card-fav-btn,
+  .modal-fav-btn,
+  .ai-generate-btn,
+  .ai-generate-section,
+  .ai-settings-btn,
+  .banana-cta,
+  .design-promo,
+  .category-switch-btn,
+
+  /* Social & promo */
+  .x-overlay,
+  .x-overlay-actions,
+  .support-link,
+  .survey-link,
+  .pro-promo-arrow,
+  .promo-banner-card,
+
+  /* PR banners & announcements */
+  .info-pill,
+  .new-badge,
+  [class*="promo"],
+
+  /* Banana tips */
+  .banana-tip-card,
+
+  /* Promo banners (Olympic, BananaNL, etc.) */
+  [data-promo],
+
+  /* Badges panel */
+  .badges-trigger,
+  .badges-panel,
+
+  /* Footer social */
+  .footer-links,
+
+  /* Misc interactive */
+  .retro-terminal-header,
+  .side-rail-card,
+  [data-noprint],
+  button:not(.print-visible) {
+    display: none !important;
+  }
+
+  /* === Reset backgrounds for ink-saving === */
+  body {
+    background: white !important;
+    color: #1a1a1a !important;
+    font-size: 11pt !important;
+    line-height: 1.5 !important;
+  }
+
+  /* === Grid layouts for print === */
+  .folder-grid,
+  .gallery-container,
+  .archive-grid {
+    display: block !important;
+    columns: 2 !important;
+    column-gap: 1.5em !important;
+  }
+
+  /* Library (tile/folder) view for print */
+  .library-container {
+    display: block !important;
+    columns: 2 !important;
+    column-gap: 1.5em !important;
+  }
+
+  .library-folder {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    margin-bottom: 1em !important;
+    border: 1px solid #ccc !important;
+    border-radius: 6px !important;
+    padding: 0.8em !important;
+    background: white !important;
+    box-shadow: none !important;
+  }
+
+  .library-folder .folder-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 4px !important;
+    columns: auto !important;
+  }
+
+  /* === Cards === */
+  .folder-grid > *,
+  .gallery-container > *,
+  .archive-grid > * {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    margin-bottom: 1em !important;
+    border: 1px solid #ccc !important;
+    border-radius: 6px !important;
+    padding: 0.8em !important;
+    background: white !important;
+    box-shadow: none !important;
+  }
+
+  /* === Ensure text is readable === */
+  h1, h2, h3 {
+    color: #1a1a1a !important;
+    page-break-after: avoid !important;
+  }
+
+  a {
+    color: #1a1a1a !important;
+    text-decoration: underline !important;
+  }
+
+  /* Show URLs after external links */
+  a[href^="http"]:after {
+    content: " (" attr(href) ")" !important;
+    font-size: 0.8em !important;
+    color: #666 !important;
+  }
+
+  /* === Images === */
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid !important;
+  }
+
+  .thumb-box img {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  /* === Header adjustments === */
+  .unified-header,
+  .m-header {
+    background: white !important;
+    color: #1a1a1a !important;
+    padding: 1em 0 !important;
+    min-height: auto !important;
+  }
+
+  /* === Page setup === */
+  @page {
+    margin: 1.5cm;
+    size: A4;
+  }
+
+  /* === YAML/prompt text blocks === */
+  .yaml-container,
+  .yaml-content {
+    background: #f5f5f5 !important;
+    border: 1px solid #ddd !important;
+    padding: 0.5em !important;
+    white-space: pre-wrap !important;
+    word-wrap: break-word !important;
+    font-size: 9pt !important;
+  }
+
+  /* === Info bar cleanup === */
+  .info-bar {
+    background: white !important;
+    border-bottom: 1px solid #ccc !important;
+  }
+}

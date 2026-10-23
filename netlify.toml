@@ -2,11 +2,11 @@
   publish = "."
 
 [[redirects]]
-  from = "/workflow"
-  to = "/workflow.html"
-  status = 200
+  from = "/"
+  to = "/zh/?tab=history#designs"
+  status = 302
 
 [[redirects]]
-  from = "/prompts"
-  to = "/prompts.html"
+  from = "/projects/infographic-evaluation/zh/*"
+  to = "/zh/:splat"
   status = 200

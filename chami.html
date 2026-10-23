@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-TW" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>茶米老師 NotebookLM 資訊圖表風格一覽表 · 視覺動線與提示詞庫</title>
+  <meta name="description" content="沃克資訊 黃信溢 (茶米老師) NotebookLM 資訊圖表與簡報實戰風格一覽表：三大視覺動線 (F/S/Z)、核心10大圖表風格、20大擴充視覺庫與神級提示詞產生器。">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Google Fonts: Inter & Noto Sans TC -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Background Orbs -->
+  <div class="bg-glow-orb orb-1"></div>
+  <div class="bg-glow-orb orb-2"></div>
+  <div class="bg-glow-orb orb-3"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-content">
+      <a href="index.html" class="nav-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-chart-pie"></i>
+        </div>
+        <div class="brand-text">
+          <h1>茶米 NotebookLM 資訊圖表風格</h1>
+          <span>黃信溢老師 · 視覺動線與提示詞一覽表</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="active"><i class="fa-solid fa-table-cells"></i> 風格一覽</a></li>
+          <li><a href="#flows"><i class="fa-solid fa-route"></i> 三大視覺動線</a></li>
+          <li><a href="#generator"><i class="fa-solid fa-wand-magic-sparkles"></i> 提示詞產生器</a></li>
+          <li><a href="workflow.html"><i class="fa-solid fa-diagram-project"></i> 實戰工作流 & Canva</a></li>
+          <li><a href="prompts.html"><i class="fa-solid fa-terminal"></i> 提示詞與 YAML 庫</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="themeToggleBtn" class="theme-toggle-btn" title="切換深淺模式">
+          <i class="fa-solid fa-sun"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-pill">
+        <i class="fa-solid fa-sparkles"></i> 破解資訊過載 · 拒絕無腦直出 · 告別文字磚頭
+      </div>
+      <h2 class="hero-title">NotebookLM 資訊圖表風格全指南</h2>
+      <p class="hero-subtitle">
+        掌握茶米老師（黃信溢）獨創的「F/S/Z 視覺動線理論」與「記事轉來源淬煉法」，結合 10 大核心風格與 20 大擴充視覺美學，
+        打造一眼就懂、引人入勝的 4K 級教學與商務資訊圖表！
+      </p>
+
+      <div class="hero-highlights">
+        <div class="highlight-item"><i class="fa-solid fa-check-circle"></i> 10 大 NotebookLM 核心圖表風格</div>
+        <div class="highlight-item"><i class="fa-solid fa-check-circle"></i> F / S / Z 三大視線引導動線</div>
+        <div class="highlight-item"><i class="fa-solid fa-check-circle"></i> 20 款擴充視覺美學庫</div>
+        <div class="highlight-item"><i class="fa-solid fa-check-circle"></i> 一鍵生成繁中 4K 神級 Prompt</div>
+      </div>
+    </section>
+
+    <!-- Search & Filter Controls -->
+    <section class="control-bar">
+      <div class="search-wrapper">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input type="text" id="styleSearchInput" class="search-input" placeholder="搜尋風格名稱、英文、特色關鍵字（如：手繪、S型、食譜、商務、黏土）...">
+      </div>
+
+      <div class="filter-pills">
+        <button class="filter-btn active" data-category="all">全部風格 (10)</button>
+        <button class="filter-btn" data-category="教學">教學與 SOP</button>
+        <button class="filter-btn" data-category="職場">職場與商業</button>
+        <button class="filter-btn" data-category="生活">生活與社群</button>
+        <button class="filter-btn" data-category="科普">科普與教育</button>
+        <button class="filter-btn" data-category="時事">時事與分析</button>
+        <button class="filter-btn" data-category="導覽">導覽與空間</button>
+      </div>
+    </section>
+
+    <!-- Core Styles Grid -->
+    <section>
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <h2><i class="fa-solid fa-palette" style="color: var(--primary);"></i> 核心 10 大資訊圖表風格卡片</h2>
+          <p>NotebookLM 最具代表性的 10 種版面風格，內建配色方案、適用場景與一鍵複製提示詞</p>
+        </div>
+      </div>
+
+      <div class="cards-grid" id="coreStylesGrid">
+        <!-- Rendered by main.js -->
+      </div>
+    </section>
+
+    <!-- Visual Flows Interactive Section -->
+    <section id="flows" class="flows-section">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <h2><i class="fa-solid fa-route" style="color: var(--accent);"></i> 茶米老師核心心法：三大視覺動線解析</h2>
+          <p>「圖表不是塞滿字就好看，好的圖表在於視線的引導！」依照文本特徵精準選擇閱讀軌跡</p>
+        </div>
+      </div>
+
+      <div class="flow-tabs">
+        <button class="flow-tab-btn active" data-flow="s-pattern">
+          <i class="fa-solid fa-route"></i> S型動線 (路徑引導 / 食譜流程)
+        </button>
+        <button class="flow-tab-btn" data-flow="f-pattern">
+          <i class="fa-solid fa-bars-staggered"></i> F型動線 (由上而下 / 條理順序)
+        </button>
+        <button class="flow-tab-btn" data-flow="z-pattern">
+          <i class="fa-solid fa-bolt"></i> Z型動線 (雙向對照 / DO vs DON'T)
+        </button>
+      </div>
+
+      <div class="flow-detail-card" id="flowDetailContainer">
+        <!-- Rendered by main.js -->
+      </div>
+    </section>
+
+    <!-- 神級提示詞產生器 -->
+    <section id="generator" class="generator-section">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <h2><i class="fa-solid fa-wand-magic-sparkles" style="color: var(--accent-pink);"></i> 茶米老師神級提示詞產生器</h2>
+          <p>直接在對話框貼上即可自動驅動右側工作室！保證繁體中文 + Noto Sans + 4K 超高清品質</p>
+        </div>
+      </div>
+
+      <div class="generator-card">
+        <div class="generator-grid">
+          <!-- Form Controls -->
+          <form id="promptGenForm" onsubmit="event.preventDefault();">
+            <div class="form-group">
+              <label class="form-label"><i class="fa-solid fa-bullseye"></i> 圖表主題 / 核心內容</label>
+              <input type="text" id="genTopic" class="form-select" value="威靈頓牛排零失敗料理全攻略" placeholder="例如：新人入職差旅報帳SOP、大甲媽祖遶境歷史演進">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label"><i class="fa-solid fa-palette"></i> 選擇資訊圖表風格</label>
+              <select id="genStyle" class="form-select">
+                <!-- Populated by JS -->
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label"><i class="fa-solid fa-route"></i> 選擇視覺引導動線</label>
+              <select id="genFlow" class="form-select">
+                <option value="S型">S型動線（蜿蜒探索路徑，適合食譜、步驟、歷程）</option>
+                <option value="F型">F型動線（由上而下由左至右，適合條例、手冊、報告）</option>
+                <option value="Z型">Z型動線（對抗與比較，適合優缺點對照、PK）</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label"><i class="fa-solid fa-vector-square"></i> 版面方向規格</label>
+              <select id="genAspect" class="form-select">
+                <option value="橫式 (16:9 Landscape)">橫式 (16:9 簡報投影與網頁橫幅)</option>
+                <option value="直式 (9:16 / 3:4 Portrait)">直式 (9:16 / 3:4 海報文宣與手機長圖)</option>
+                <option value="正方形 (1:1 Square)">正方形 (1:1 社群 IG / FB 貼文)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label"><i class="fa-solid fa-sliders"></i> 追加補充細節（選填）</label>
+              <textarea id="genDetails" class="form-textarea" rows="2" placeholder="例如：標註三個最容易烤焦的失誤點、附上溫控時間表、增加食材準備清單..."></textarea>
+            </div>
+          </form>
+
+          <!-- Prompt Output -->
+          <div class="prompt-output-box">
+            <label class="form-label" style="display: flex; justify-content: space-between; align-items: center;">
+              <span><i class="fa-solid fa-code"></i> 即時生成之神級提示詞</span>
+              <span style="font-size: 0.8rem; color: var(--accent-emerald);"><i class="fa-solid fa-shield-halved"></i> 內建繁中+Noto Sans+4K防護</span>
+            </label>
+            <div id="genOutput" class="output-code-area"></div>
+            <div style="margin-top: 16px;">
+              <button id="genCopyBtn" class="btn btn-primary" style="width: 100%;">
+                <i class="fa-regular fa-copy"></i> 一鍵複製完整提示詞（可直接貼入 NotebookLM）
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 擴充 20 大視覺風格庫 -->
+    <section>
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <h2><i class="fa-solid fa-layer-group" style="color: var(--accent-amber);"></i> 茶米老師 NanoBana2 擴充 20 款視覺風格庫</h2>
+          <p>收錄茶米老師精心整理之 20 款進階生圖美學關鍵字，點擊「帶入產生器」即可混搭應用！</p>
+        </div>
+      </div>
+
+      <div class="extended-grid" id="extendedStylesGrid">
+        <!-- Rendered by main.js -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal -->
+  <div id="styleModal" class="modal-overlay" onclick="if(event.target===this)closeStyleModal()">
+    <div class="modal-content">
+      <button class="modal-close-btn" onclick="closeStyleModal()">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="appToast" class="toast"></div>
+
+  <!-- Footer -->
+  <footer class="footer container">
+    <p>
+      <strong>茶米老師 NotebookLM 資訊圖表風格一覽表</strong> · 沃克資訊 黃信溢 (茶米老師) 授課實戰精華
+    </p>
+    <p style="margin-top: 8px;">
+      核心技術：Gemini NotebookLM 知識庫 × F/S/Z 視覺動線 × 提示詞工程 × Canva Magic Layers 拆圖後製
+    </p>
+    <p style="margin-top: 12px; font-size: 0.8rem; color: var(--text-muted);">
+      <i class="fa-solid fa-quote-left"></i> 打不過 AI，就加入 AI；越逃避 AI，就越容易被 AI 取代。 — 茶米老師
+    </p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

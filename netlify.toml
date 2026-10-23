@@ -1,0 +1,12 @@
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "/workflow"
+  to = "/workflow.html"
+  status = 200
+
+[[redirects]]
+  from = "/prompts"
+  to = "/prompts.html"
+  status = 200

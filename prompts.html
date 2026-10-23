@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-TW" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>提示詞庫與 YAML 規格模板 · 茶米老師 NotebookLM 實戰</title>
+  <meta name="description" content="NotebookLM 資訊圖表與簡報神級提示詞庫、YAML 規格化排版分析模板、簡報頁數突破法與 10 大風格指令完整收錄。">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Background Orbs -->
+  <div class="bg-glow-orb orb-1"></div>
+  <div class="bg-glow-orb orb-3"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-content">
+      <a href="index.html" class="nav-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-chart-pie"></i>
+        </div>
+        <div class="brand-text">
+          <h1>茶米 NotebookLM 資訊圖表風格</h1>
+          <span>黃信溢老師 · 提示詞庫與 YAML 規格模板</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html"><i class="fa-solid fa-table-cells"></i> 風格一覽</a></li>
+          <li><a href="index.html#flows"><i class="fa-solid fa-route"></i> 三大視覺動線</a></li>
+          <li><a href="index.html#generator"><i class="fa-solid fa-wand-magic-sparkles"></i> 提示詞產生器</a></li>
+          <li><a href="workflow.html"><i class="fa-solid fa-diagram-project"></i> 實戰工作流 & Canva</a></li>
+          <li><a href="prompts.html" class="active"><i class="fa-solid fa-terminal"></i> 提示詞與 YAML 庫</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="themeToggleBtn" class="theme-toggle-btn" title="切換深淺模式">
+          <i class="fa-solid fa-sun"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" style="padding-top: 40px;">
+    <!-- Hero -->
+    <section style="text-align: center; margin-bottom: 48px;">
+      <div class="hero-pill">
+        <i class="fa-solid fa-code"></i> 開箱即用 · 規格化精準控制
+      </div>
+      <h2 style="font-size: 2.6rem; font-weight: 800; margin-bottom: 16px;">
+        神級提示詞庫與 YAML 規格化模板
+      </h2>
+      <p style="color: var(--text-muted); max-width: 800px; margin: 0 auto; font-size: 1.1rem;">
+        收錄茶米老師課堂傳授的各階段 Prompt、乃誠老師的 YAML 結構化排版分析規格，以及突破 NotebookLM 簡報頁數上限的長篇分段提示法。
+      </p>
+    </section>
+
+    <!-- 1. 茶米老師三階段提示詞庫 -->
+    <section style="margin-bottom: 60px;">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <h2><i class="fa-solid fa-terminal" style="color: var(--primary);"></i> 茶米老師三階段實戰提示詞</h2>
+          <p>從初步素材廣蒐，到內部對話淬煉，再到自動驅動生成</p>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 20px;">
+        <!-- P1 -->
+        <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 24px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--accent-amber);">
+              <i class="fa-solid fa-compass"></i> 階段一：廣結善緣「鬆散提示詞」（發想與素材收集）
+            </h3>
+            <button class="btn btn-secondary" onclick="copyPromptText('請幫我收集與整理關於【主題】的各方觀點、實作技巧、最新演進與常見失敗避坑點。我需要最廣泛、多元且具有創意的面向，幫我條列出來。')">
+              <i class="fa-regular fa-copy"></i> 複製
+            </button>
+          </div>
+          <div style="background: rgba(0,0,0,0.3); border-radius: var(--radius-sm); padding: 14px; font-family: monospace; font-size: 0.88rem; color: #38bdf8;">
+            請幫我收集與整理關於【主題】的各方觀點、實作技巧、最新演進與常見失敗避坑點。我需要最廣泛、多元且具有創意的面向，幫我條列出來。
+          </div>
+        </div>
+
+        <!-- P2 -->
+        <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 24px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--accent);">
+              <i class="fa-solid fa-filter"></i> 階段二：深度聚焦「淬煉提示詞」（為圖表做骨架整理）
+            </h3>
+            <button class="btn btn-secondary" onclick="copyPromptText('請根據現有資料，為我淬煉出一份適合轉換為「資訊圖表」的精實結構：\n1. 核心標題與一句震撼副標題\n2. 關鍵實作流程拆解為 3 至 5 個明確步驟（每步不超過 30 字）\n3. 列出 3 項最致命的翻車錯誤與補救方案\n4. 數據或關鍵成效指標\n請去除所有贅字與長篇大論，以模組化條列呈現，方便我轉存為來源。')">
+              <i class="fa-regular fa-copy"></i> 複製
+            </button>
+          </div>
+          <div style="background: rgba(0,0,0,0.3); border-radius: var(--radius-sm); padding: 14px; font-family: monospace; font-size: 0.88rem; color: #38bdf8; white-space: pre-wrap;">
+請根據現有資料，為我淬煉出一份適合轉換為「資訊圖表」的精實結構：
+1. 核心標題與一句震撼副標題
+2. 關鍵實作流程拆解為 3 至 5 個明確步驟（每步不超過 30 字）
+3. 列出 3 項最致命的翻車錯誤與補救方案
+4. 數據或關鍵成效指標
+請去除所有贅字與長篇大論，以模組化條列呈現，方便我轉存為來源。
+          </div>
+        </div>
+
+        <!-- P3 -->
+        <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 24px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--accent-emerald);">
+              <i class="fa-solid fa-wand-magic-sparkles"></i> 階段三：神級「對話驅動生圖提示詞」（工作室自動化）
+            </h3>
+            <button class="btn btn-primary" onclick="copyPromptText('請你扮演一個資訊專家，根據我提供的資料，自動分析並為我生成一張資訊圖表：\n- 視覺動線：請依照內容特性精準選擇（S型路徑引導 / F型由上而下順序 / Z型對抗比較）。\n- 內容結構：區隔化模組呈現，嚴格限制冗長文字，強化指引箭頭與關鍵數值。\n- 視覺風格：【指定風格名稱，如：手繪筆記風 / 專業商務風 / 3D黏土風】。\n- 輸出規格：圖表文字強制使用繁體中文，指定字型為 Noto Sans TC，檔案輸出品質達到 4K 超高清規格。')">
+              <i class="fa-regular fa-copy"></i> 複製此神級指令
+            </button>
+          </div>
+          <div style="background: rgba(0,0,0,0.3); border-radius: var(--radius-sm); padding: 14px; font-family: monospace; font-size: 0.88rem; color: #38bdf8; white-space: pre-wrap;">
+請你扮演一個資訊專家，根據我提供的資料，自動分析並為我生成一張資訊圖表：
+- 視覺動線：請依照內容特性精準選擇（S型路徑引導 / F型由上而下順序 / Z型對抗比較）。
+- 內容結構：區隔化模組呈現，嚴格限制冗長文字，強化指引箭頭與關鍵數值。
+- 視覺風格：【指定風格名稱，如：手繪筆記風 / 專業商務風 / 3D黏土風】。
+- 輸出規格：圖表文字強制使用繁體中文，指定字型為 Noto Sans TC，檔案輸出品質達到 4K 超高清規格。
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. YAML 規格化排版模板 (規格化控制風格) -->
+    <section style="margin-bottom: 60px;">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <h2><i class="fa-solid fa-file-code" style="color: var(--accent-pink);"></i> YAML 規格化排版控制模板（乃誠/聰賢老師規範）</h2>
+          <p>把這份 YAML 直接貼到 NotebookLM「新增來源」中，AI 就能 100% 遵守設計系統規範！</p>
+        </div>
+        <button class="btn btn-primary" onclick="copyYamlTemplate()">
+          <i class="fa-regular fa-copy"></i> 複製完整 YAML 規格代碼
+        </button>
+      </div>
+
+      <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 24px;">
+        <pre style="background: rgba(0,0,0,0.4); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 20px; color: #a5f3fc; font-family: 'JetBrains Mono', Consolas, monospace; font-size: 0.88rem; line-height: 1.6; overflow-x: auto;" id="yamlPreArea"></pre>
+      </div>
+    </section>
+
+    <!-- 3. 突破 NotebookLM 簡報頁數上限技巧 -->
+    <section style="margin-bottom: 60px;">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <h2><i class="fa-solid fa-copy" style="color: var(--accent-amber);"></i> 長篇簡報突破頁數上限：分段生成法</h2>
+          <p>NotebookLM 單次生成簡報有 15-21 頁限制。茶米老師獨創分段生成後於 PowerPoint 合併技巧</p>
+        </div>
+      </div>
+
+      <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 32px;">
+        <p style="color: var(--text-sub); line-height: 1.7; margin-bottom: 16px;">
+          <strong>操作秘訣：</strong>在 NotebookLM 上傳一份風格統一的參考檔案（例如：<code>簡報風格一壓縮.pdf</code>），接著分別輸入分段生成提示詞：
+        </p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+          <div style="background: rgba(0,0,0,0.25); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 18px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <strong style="color: var(--primary);">第一段：生成第 1 至 10 頁</strong>
+              <button class="btn btn-secondary" style="padding: 4px 8px; font-size: 0.75rem;" onclick="copyPromptText('請參考來源中的「簡報風格參考檔」，嚴格維持相同色系、字型與版面佈局。本次請為我生成簡報【第 1 頁至第 10 頁】：\n- 頁面獨立性：每頁對應大綱獨立展開，嚴禁合併區塊或刪減重點\n- 保留原文：保留原有文字結構，文字使用繁體中文\n- 生成頁數精確鎖定為 10 頁')">
+                <i class="fa-regular fa-copy"></i> 複製
+              </button>
+            </div>
+            <div style="font-family: monospace; font-size: 0.82rem; color: #7dd3fc; line-height: 1.5; white-space: pre-wrap;">
+請參考來源中的「簡報風格參考檔」，嚴格維持相同色系、字型與版面佈局。本次請為我生成簡報【第 1 頁至第 10 頁】：
+- 頁面獨立性：每頁對應大綱獨立展開，嚴禁合併區塊或刪減重點
+- 保留原文：保留原有文字結構，文字使用繁體中文
+- 生成頁數精確鎖定為 10 頁
+            </div>
+          </div>
+
+          <div style="background: rgba(0,0,0,0.25); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 18px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <strong style="color: var(--accent);">第二段：生成第 11 至 20 頁</strong>
+              <button class="btn btn-secondary" style="padding: 4px 8px; font-size: 0.75rem;" onclick="copyPromptText('請參考來源中的「簡報風格參考檔」，嚴格延續上一份簡報的色彩、字型與卡片風格。本次請為我生成簡報【第 11 頁至第 20 頁】：\n- 延續性：版面風格完全無縫接軌第 1-10 頁\n- 嚴禁合併：每一子主題獨立佔一頁\n- 文字繁體中文，精確生成 10 頁')">
+                <i class="fa-regular fa-copy"></i> 複製
+              </button>
+            </div>
+            <div style="font-family: monospace; font-size: 0.82rem; color: #7dd3fc; line-height: 1.5; white-space: pre-wrap;">
+請參考來源中的「簡報風格參考檔」，嚴格延續上一份簡報的色彩、字型與卡片風格。本次請為我生成簡報【第 11 頁至第 20 頁】：
+- 延續性：版面風格完全無縫接軌第 1-10 頁
+- 嚴禁合併：每一子主題獨立佔一頁
+- 文字繁體中文，精確生成 10 頁
+            </div>
+          </div>
+        </div>
+
+        <p style="font-size: 0.9rem; color: var(--text-muted);">
+          <i class="fa-solid fa-circle-info" style="color: var(--accent);"></i> 生成後下載兩份 PPTX 檔案，直接在 Microsoft PowerPoint 中拖曳複製合併，就能輕鬆做出 30 頁以上風格統一的超長篇專業簡報！
+        </p>
+      </div>
+    </section>
+
+    <!-- 4. 10 大簡報風格對照表 -->
+    <section style="margin-bottom: 60px;">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <h2><i class="fa-solid fa-display" style="color: var(--accent-emerald);"></i> 10 大簡報風格 (Presentation Styles) 速查</h2>
+          <p>茶米老師精選之簡報表達模式與英文指令</p>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px;" id="presentationStylesGrid">
+        <!-- Rendered by script below -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Toast -->
+  <div id="appToast" class="toast"></div>
+
+  <!-- Footer -->
+  <footer class="footer container">
+    <p>
+      <strong>茶米老師 NotebookLM 資訊圖表風格一覽表</strong> · 沃克資訊 黃信溢 (茶米老師) 授課實戰精華
+    </p>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // 填入 YAML 模板
+      const yamlArea = document.getElementById("yamlPreArea");
+      if (yamlArea && window.INFOGRAPHIC_DATA) {
+        yamlArea.textContent = window.INFOGRAPHIC_DATA.yamlTemplate;
+      }
+
+      // 渲染簡報風格
+      const presGrid = document.getElementById("presentationStylesGrid");
+      if (presGrid && window.INFOGRAPHIC_DATA) {
+        presGrid.innerHTML = window.INFOGRAPHIC_DATA.presentationStyles.map(p => `
+          <div class="mini-card">
+            <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 2px;">${p.name}</h4>
+            <div style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 8px;">${p.nameEn}</div>
+            <p style="font-size: 0.88rem; color: var(--text-sub); line-height: 1.5;">${p.desc}</p>
+          </div>
+        `).join("");
+      }
+    });
+
+    function copyYamlTemplate() {
+      if (window.INFOGRAPHIC_DATA) {
+        copyPromptText(encodeURIComponent(window.INFOGRAPHIC_DATA.yamlTemplate));
+      }
+    }
+  </script>
+</body>
+</html>

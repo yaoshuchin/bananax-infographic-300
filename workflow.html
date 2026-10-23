@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-TW" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>茶米老師 4 步實戰工作流 · 從資料到神級資訊圖表與 Canva 後製</title>
+  <meta name="description" content="深入解析茶米老師 (黃信溢) NotebookLM 製作資訊圖表的 4 步法實戰工作流、記事轉來源心法與 Canva Magic Layers 拆圖轉短影音技術。">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Background Orbs -->
+  <div class="bg-glow-orb orb-1"></div>
+  <div class="bg-glow-orb orb-2"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-content">
+      <a href="index.html" class="nav-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-chart-pie"></i>
+        </div>
+        <div class="brand-text">
+          <h1>茶米 NotebookLM 資訊圖表風格</h1>
+          <span>黃信溢老師 · 實戰工作流與 Canva 技巧</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html"><i class="fa-solid fa-table-cells"></i> 風格一覽</a></li>
+          <li><a href="index.html#flows"><i class="fa-solid fa-route"></i> 三大視覺動線</a></li>
+          <li><a href="index.html#generator"><i class="fa-solid fa-wand-magic-sparkles"></i> 提示詞產生器</a></li>
+          <li><a href="workflow.html" class="active"><i class="fa-solid fa-diagram-project"></i> 實戰工作流 & Canva</a></li>
+          <li><a href="prompts.html"><i class="fa-solid fa-terminal"></i> 提示詞與 YAML 庫</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="themeToggleBtn" class="theme-toggle-btn" title="切換深淺模式">
+          <i class="fa-solid fa-sun"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" style="padding-top: 40px;">
+    <!-- Workflow Hero -->
+    <section style="text-align: center; margin-bottom: 50px;">
+      <div class="hero-pill">
+        <i class="fa-solid fa-graduation-cap"></i> 茶米老師實戰大解密 · 拒絕當「直出受害者」
+      </div>
+      <h2 style="font-size: 2.6rem; font-weight: 800; margin-bottom: 16px;">
+        NotebookLM 資訊圖表 4 步神級工作流
+      </h2>
+      <p style="color: var(--text-muted); max-width: 800px; margin: 0 auto; font-size: 1.1rem;">
+        為什麼很多人用 AI 生出的資訊圖表字又多又雜，完全讓人不想讀？<br>
+        茶米老師強調：<strong>「圖表的核心在於精煉與視覺動線引導，而非直接把生料倒進模型！」</strong>
+      </p>
+    </section>
+
+    <!-- 痛點對比區 -->
+    <section style="margin-bottom: 60px;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+        <div style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: var(--radius-lg); padding: 28px;">
+          <h3 style="color: #ef4444; font-size: 1.3rem; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+            <i class="fa-solid fa-circle-xmark"></i> 常見錯誤：未整理「直接直出」
+          </h3>
+          <ul style="color: var(--text-sub); line-height: 1.8; padding-left: 20px;">
+            <li>資料未經消化與過濾，把數萬字長文或網頁直接按「生成資訊圖表」。</li>
+            <li>圖面上密密麻麻排滿細小文字，字多到變成「文字磚頭」，完全失去圖表意義。</li>
+            <li>AI 自動抓取次要細節，缺乏視覺焦點與層次，讀者看 3 秒就放棄。</li>
+            <li>格式若錯誤（如英文、低解析度、缺字），完全無法修改只能重抽卡。</li>
+          </ul>
+        </div>
+
+        <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: var(--radius-lg); padding: 28px;">
+          <h3 style="color: #10b981; font-size: 1.3rem; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+            <i class="fa-solid fa-circle-check"></i> 茶米流：4 步法精密淬煉
+          </h3>
+          <ul style="color: var(--text-sub); line-height: 1.8; padding-left: 20px;">
+            <li><strong>主題發想先行：</strong>先鎖定特定情境（如：在家不翻車零失敗威靈頓牛排）。</li>
+            <li><strong>對話淬煉聚焦：</strong>利用對話框請 AI 濃縮結構，並透過「記事轉來源」回灌知識庫。</li>
+            <li><strong>動線提示詞驅動：</strong>用 F / S / Z 動線 + 繁中 4K 提示詞在對話框驅動生成。</li>
+            <li><strong>Canva Magic Layers：</strong>在英系環境下拆解圖層、自由改字並加上動畫轉影音！</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 步法詳細拆解 -->
+    <section style="margin-bottom: 70px;">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <h2><i class="fa-solid fa-list-ol" style="color: var(--primary);"></i> 4 步實戰法門深度拆解</h2>
+          <p>跟著茶米老師一步一步走，徹底掌握 NotebookLM 的真正威力</p>
+        </div>
+      </div>
+
+      <!-- Step 1 -->
+      <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 32px; margin-bottom: 24px;">
+        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+          <span style="width: 44px; height: 44px; background: var(--primary); color: #fff; border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.2rem;">1</span>
+          <div>
+            <h3 style="font-size: 1.4rem;">主題發想與資料收集：廣結善緣的「鬆散提示詞」</h3>
+            <span style="color: var(--text-muted); font-size: 0.85rem;">Step 1: Topic Brainstorming & Data Gathering</span>
+          </div>
+        </div>
+        <p style="color: var(--text-sub); line-height: 1.7; margin-bottom: 16px;">
+          在 NotebookLM 新增筆記本時，不要急著限制 AI。茶米老師分享：「第一次收集資料時，我給他比較<strong>鬆散的提示詞</strong>，目的是要廣納百川，拿到最豐富的作法與秘技！」
+        </p>
+        <div style="background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 14px; font-family: monospace; font-size: 0.9rem; color: #38bdf8; margin-bottom: 12px;">
+          【茶米老師示範 Prompt】<br>
+          請幫我收集威靈頓牛排的各種食譜、烘烤秘技、常見失敗原因與關鍵醬汁搭配，越多面向越好。
+        </div>
+        <button class="btn btn-secondary" onclick="copyPromptText('請幫我收集威靈頓牛排的各種食譜、烘烤秘技、常見失敗原因與關鍵醬汁搭配，越多面向越好。')">
+          <i class="fa-regular fa-copy"></i> 複製此步驟提示詞
+        </button>
+      </div>
+
+      <!-- Step 2 -->
+      <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 32px; margin-bottom: 24px;">
+        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+          <span style="width: 44px; height: 44px; background: var(--accent); color: #fff; border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.2rem;">2</span>
+          <div>
+            <h3 style="font-size: 1.4rem;">對話淬煉與回灌來源：NotebookLM 核心流轉術</h3>
+            <span style="color: var(--text-muted); font-size: 0.85rem;">Step 2: Conversation Refining & Convert to Source</span>
+          </div>
+        </div>
+        <p style="color: var(--text-sub); line-height: 1.7; margin-bottom: 16px;">
+          拿到資料後，在中央對話框請 AI 聚焦出最精華的結論。例如：「幫我整理一份可以在家製作、零失敗不翻車的精簡食譜與避坑步驟」。當 AI 產出優質回應後，有兩種<strong>回灌為左側來源</strong>的方法：
+        </p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+          <div style="background: rgba(255,255,255,0.04); border: 1px solid var(--border-color); padding: 16px; border-radius: var(--radius-sm);">
+            <strong style="color: var(--accent);"><i class="fa-solid fa-bookmark"></i> 法門 A：記事轉來源</strong>
+            <p style="font-size: 0.88rem; color: var(--text-sub); margin-top: 6px;">
+              點擊 AI 回應下方的「儲存至記事」，接著在右側筆記面板中點擊「轉換成來源」，這篇精煉結果立即成為獨立的左側文件！
+            </p>
+          </div>
+          <div style="background: rgba(255,255,255,0.04); border: 1px solid var(--border-color); padding: 16px; border-radius: var(--radius-sm);">
+            <strong style="color: var(--accent-emerald);"><i class="fa-solid fa-paste"></i> 法門 B：直接複製貼上來源</strong>
+            <p style="font-size: 0.88rem; color: var(--text-sub); margin-top: 6px;">
+              直接複製對話區精煉文本，點擊左側「新增來源 ➔ 貼上文字」，命名為「精煉版威靈頓牛排SOP」，只勾選它來做生圖！
+            </p>
+          </div>
+        </div>
+        <div style="background: rgba(245, 158, 11, 0.1); border-left: 4px solid var(--accent-amber); padding: 12px 16px; font-size: 0.88rem; color: var(--text-main);">
+          <i class="fa-solid fa-triangle-exclamation" style="color: var(--accent-amber);"></i> <strong>茶米老師特別提醒：</strong>如果報告中有表格，千萬不要直接按「匯出為 Google 文件」（表格可能會亂掉）。正確作法是按右上角「複製」，在 Google 文件中全選刪除後再「貼上」，表格才能完美保留！
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 32px; margin-bottom: 24px;">
+        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+          <span style="width: 44px; height: 44px; background: var(--accent-pink); color: #fff; border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.2rem;">3</span>
+          <div>
+            <h3 style="font-size: 1.4rem;">神級提示詞對話驅動：不必點右側工作室按鈕</h3>
+            <span style="color: var(--text-muted); font-size: 0.85rem;">Step 3: Prompt-Driven Studio Auto Generation</span>
+          </div>
+        </div>
+        <p style="color: var(--text-sub); line-height: 1.7; margin-bottom: 16px;">
+          一般人都是點右側工作室的「資訊圖表」按鈕，但茶米老師發現一個更神的方法：<strong>直接在對話框貼入設計規格指令！</strong><br>
+          只要對話包含明確的角色設定與視覺動線指令，NotebookLM 會自動呼叫後台圖像引擎，同時鎖定繁體中文、Noto Sans 字型與 4K 超高清畫質！
+        </p>
+        <div style="background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 14px; font-family: monospace; font-size: 0.88rem; color: #38bdf8; margin-bottom: 12px; line-height: 1.6;">
+          請你扮演一個資訊專家，根據我提供的資料，自動分析並為我生成一張資訊圖表。<br>
+          1. 視覺動線：採用 S 型路徑引導（以蜿蜒探索路線串聯各步驟）。<br>
+          2. 內容精煉：精簡冗詞，強調重點與數字指標。<br>
+          3. 風格：手繪筆記風（Sketch Notes），自然素描質感與清晰留白。<br>
+          4. 規格：文字繁體中文，指定 Noto Sans 字型，4K 品質輸出。
+        </div>
+        <button class="btn btn-primary" onclick="copyPromptText('請你扮演一個資訊專家，根據我提供的資料，自動分析並為我生成一張資訊圖表。1. 視覺動線：採用 S 型路徑引導（以蜿蜒探索路線串聯各步驟）。2. 內容精煉：精簡冗詞，強調重點與數字指標。3. 風格：手繪筆記風（Sketch Notes），自然素描質感與清晰留白。4. 規格：文字繁體中文，指定 Noto Sans 字型，4K 品質輸出。')">
+          <i class="fa-regular fa-copy"></i> 複製此神級驅動 Prompt
+        </button>
+      </div>
+
+      <!-- Step 4 -->
+      <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 32px; margin-bottom: 24px;">
+        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+          <span style="width: 44px; height: 44px; background: var(--accent-emerald); color: #fff; border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.2rem;">4</span>
+          <div>
+            <h3 style="font-size: 1.4rem;">Canva Magic Layers 拆圖黑科技：改字、換圖、轉短影音</h3>
+            <span style="color: var(--text-muted); font-size: 0.85rem;">Step 4: Canva Magic Layers Disassembly & MP4 Video Animation</span>
+          </div>
+        </div>
+        <p style="color: var(--text-sub); line-height: 1.7; margin-bottom: 16px;">
+          NotebookLM 輸出的資訊圖表是一整張圖檔，如果某個字有錯字、或者想要放大某個區塊怎麼辦？茶米老師首創 <strong>Canva Magic Layers 圖層拆解密技</strong>：
+        </p>
+        <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px;">
+          <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <i class="fa-solid fa-1" style="color: var(--primary); margin-top: 4px;"></i>
+            <div><strong>關鍵前置步驟：</strong>將 Canva 語言設定切換為英文（Settings ➔ Language ➔ English US），否則該功能可能不會出現。</div>
+          </div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <i class="fa-solid fa-2" style="color: var(--accent); margin-top: 4px;"></i>
+            <div><strong>上傳檔案：</strong>將 NotebookLM 生成的資訊圖表圖片（或 PDF 簡報）上傳至 Canva Projects ➔ Uploads。</div>
+          </div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <i class="fa-solid fa-3" style="color: var(--accent-pink); margin-top: 4px;"></i>
+            <div><strong>分離圖框：</strong>若是 PDF 簡報頁面，先對圖片按右鍵選擇「Detach image from background」（從背景分離圖片）。</div>
+          </div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <i class="fa-solid fa-4" style="color: var(--accent-emerald); margin-top: 4px;"></i>
+            <div><strong>啟動 Magic Layers：</strong>選取圖片 ➔ 點擊上方工具列「Edit Photo」➔ 選擇「Magic Layers」！整張平面的 AI 圖片瞬間拆解為向量圖層、獨立文字與背景！</div>
+          </div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <i class="fa-solid fa-5" style="color: var(--accent-amber); margin-top: 4px;"></i>
+            <div><strong>加值短影音：</strong>修正文字後，點擊「Animate ➔ Page」，替圖表加上動態進場動畫，並匯出為 MP4 短影音，發布至 Instagram Reels 或 YouTube Shorts！</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 實戰案例全景 -->
+    <section style="margin-bottom: 70px;">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <h2><i class="fa-solid fa-flask-vial" style="color: var(--accent-pink);"></i> 兩大實戰案例複盤</h2>
+          <p>茶米老師課堂真實演示的經典範例</p>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 28px;">
+        <!-- Case 1 -->
+        <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 28px;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+            <span class="badge badge-amber">經典案例 1</span>
+            <span style="font-size: 0.85rem; color: var(--text-muted);"><i class="fa-solid fa-utensils"></i> 美食與料理SOP</span>
+          </div>
+          <h3 style="font-size: 1.35rem; font-weight: 700; margin-bottom: 8px;">威靈頓牛排零失敗料理全攻略</h3>
+          <p style="color: var(--text-sub); font-size: 0.95rem; line-height: 1.6; margin-bottom: 16px;">
+            從廣蒐各家名廚配方，到對話聚焦成「家庭主婦在家烤不翻車指南」，搭配手繪筆記風與 S 型路徑動線，清楚標註肉質醃製、蕈菇醬熬乾水分、酥皮包裹與烤溫控制四大核心關卡。
+          </p>
+          <div style="background: rgba(0,0,0,0.2); padding: 10px 14px; border-radius: var(--radius-sm); font-size: 0.85rem; color: var(--accent); margin-bottom: 16px;">
+            <i class="fa-solid fa-check"></i> 推薦風格：手繪筆記風 (Sketch Notes)<br>
+            <i class="fa-solid fa-check"></i> 視覺動線：S型蜿蜒探索動線<br>
+            <i class="fa-solid fa-check"></i> 亮點：步驟清晰、不漏掉排濕關鍵秘訣
+          </div>
+          <a href="index.html#generator" class="btn btn-secondary" style="width: 100%;">
+            <i class="fa-solid fa-wand-magic-sparkles"></i> 帶入此案例參數
+          </a>
+        </div>
+
+        <!-- Case 2 -->
+        <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 28px;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+            <span class="badge badge-purple">經典案例 2</span>
+            <span style="font-size: 0.85rem; color: var(--text-muted);"><i class="fa-solid fa-torii-gate"></i> 文化與歷史傳承</span>
+          </div>
+          <h3 style="font-size: 1.35rem; font-weight: 700; margin-bottom: 8px;">三月瘋媽祖：白沙屯與大甲遶境傳奇</h3>
+          <p style="color: var(--text-sub); font-size: 0.95rem; line-height: 1.6; margin-bottom: 16px;">
+            運用 NotebookLM 的「報告」功能中的「網誌文章」模式，加入病毒式行銷下標與在地溫暖幽默語調，萃取出媽祖信仰的文化深度。再拆分為「歷史緣由」、「進香路徑」與「信眾百態」等多頁簡報。
+          </p>
+          <div style="background: rgba(0,0,0,0.2); padding: 10px 14px; border-radius: var(--radius-sm); font-size: 0.85rem; color: var(--accent-pink); margin-bottom: 16px;">
+            <i class="fa-solid fa-check"></i> 推薦風格：動漫故事風 / 社論新聞風<br>
+            <i class="fa-solid fa-check"></i> 視覺動線：Z型對照動線 (白沙屯 vs 大甲)<br>
+            <i class="fa-solid fa-check"></i> 亮點：病毒式行銷文案 + 多頁簡報拆分法
+          </div>
+          <a href="index.html#generator" class="btn btn-secondary" style="width: 100%;">
+            <i class="fa-solid fa-wand-magic-sparkles"></i> 帶入此案例參數
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Toast -->
+  <div id="appToast" class="toast"></div>
+
+  <!-- Footer -->
+  <footer class="footer container">
+    <p>
+      <strong>茶米老師 NotebookLM 資訊圖表風格一覽表</strong> · 沃克資訊 黃信溢 (茶米老師) 授課實戰精華
+    </p>
+    <p style="margin-top: 8px;">
+      核心技術：Gemini NotebookLM 知識庫 × F/S/Z 視覺動線 × 提示詞工程 × Canva Magic Layers 拆圖後製
+    </p>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
